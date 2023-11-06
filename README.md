@@ -2,15 +2,14 @@
 
 Design patterns similar to this keep coming up for some of the latest Martech solutions I've been building, so I felt like sharing it in case anyone sees value.
 
-::: mermaid
+``` mermaid
 graph LR;
-    Bucket<--state.yml
-    data.parquet.gzo-->Catalog;
-    Catalog--generateso-->Audience;
-    Audience<--"connection"o-->Adtech;
-    Audience<--"connection"o-->DataSource;
-    Audience--updateso-->Catalog;
-:::
+    Bucket <-- state.yml<br/>data.parquet.gz --> Catalog
+    Catalog -- generates --> Audience
+    Audience <-- connection --> Adtech
+    Audience <-- connection --> DataSource
+    Audience -- updates --> Catalog
+```
 
 ## Context and Challenge
 
@@ -65,7 +64,7 @@ graph LR;
 
 Relationship between classes, and their attribute & property definitions.
 
-::: mermaid
+``` mermaid
 erDiagram
     Catalog ||--o{ Audience : instantiates
     Catalog {
@@ -99,13 +98,13 @@ erDiagram
         dict response "Response of the Aftech server API call"
         dict state "Dynamically updated state"
     }
-:::
+```
 
 ### `Catalog.audiences` - Generator Workflow
 
 For each `Audience` instance, this is the generator loop actions shared between classes.
 
-::: mermaid
+``` mermaid
 sequenceDiagram
     participant Bucket
     participant Catalog
@@ -123,7 +122,7 @@ sequenceDiagram
         Audience->>Catalog: Update state
         Catalog->>Bucket: Update state<br/>& data files
     end
-:::
+```
 
 ### `main.py` execution
 
