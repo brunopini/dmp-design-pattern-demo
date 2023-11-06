@@ -1,0 +1,13 @@
+# Env
+venv/
+.python-version
+.env
+
+# Python
+__pycache__/
+
+# VSCode
+.vscode
+
+# Github
+.github

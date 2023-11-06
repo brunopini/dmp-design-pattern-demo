@@ -1,0 +1,4 @@
+pandas==2.1.1
+pyarrow==14.0.0
+pydantic==2.4.1
+ruamel-yaml==0.17.35

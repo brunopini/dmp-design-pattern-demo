@@ -1,0 +1,19 @@
+demo_audience:
+  description: A demo audience shared between two adtechs.
+
+  apigateway:
+    endpoint: test/
+    params:
+      test: true
+    last_response:
+      date: '20231106'
+      status: 200
+      message: 'Success: Demo response message.'
+
+  adtechA:
+    name: demo_audience
+    audience_type: TYPE_X
+
+  adtechB:
+    name: demo_audience
+    expiration_time: 300
