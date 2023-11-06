@@ -84,6 +84,7 @@ erDiagram
         dict state "Dynamically updated state"
         DataSource source "DataSource instance"
         list[AudienceMember] members "List of Audience.Member instances"
+        Adtech adtech "Adtech instance"
         dict state "Dynamically updated state, referencing components' states"
     }
     Adtech {
