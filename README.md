@@ -71,6 +71,12 @@ erDiagram
         client bucket "Client object of bucket provider"
         generator[Audience] audiences "Generator of Audience instances"
     }
+    Audience ||--o{ AudienceMember : instantiates
+    AudienceMember {
+        list[SHA256] email
+        list[SHA256] phone_number
+        list[SHA256] zip_code
+    }
     Audience ||--o{ Adtech : instantiates
     Audience {
         string name "Unique name from YAML state file"
