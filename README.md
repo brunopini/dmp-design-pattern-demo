@@ -4,10 +4,10 @@ Design patterns similar to this keep coming up for some of the latest Martech so
 
 ``` mermaid
 graph LR;
-    Bucket <-- state.yml<br/>data.parquet.gz --> Catalog
-    Catalog -- generates --> Audience
-    Audience <-- connection --> Adtech
-    Audience <-- connection --> DataSource
+    Bucket[(Bucket)]<--state.yml<br/>data.parquet.gz-->Catalog
+    Catalog(Catalog) -- generates --> Audience(Audience)
+    Audience <-- connection --> Adtech(Adtech)
+    Audience <-- connection --> DataSource(DataSource)
     Audience -- updates --> Catalog
 ```
 
@@ -62,6 +62,8 @@ sequenceDiagram
         Catalog->>Bucket: Update state<br/>& data files
     end
 ```
+
+Each loop iteration represents the complete licycle of each `state.yml` file processing.
 
 ### Tree
 
