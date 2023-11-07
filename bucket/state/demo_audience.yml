@@ -1,19 +1,26 @@
 demo_audience:
   description: A demo audience shared between two adtechs.
-
-  apigateway:
+  source:
     endpoint: test/
     params:
       test: true
     last_response:
-      date: '20231106'
+      date: '20231107'
       status: 200
       message: 'Success: Demo response message.'
-
   adtechA:
     name: demo_audience
+    id: '123456789'
     audience_type: TYPE_X
-
+    last_response:
+      date: '20231107'
+      status: 200
+      message: 'Success: Demo response message.'
   adtechB:
     name: demo_audience
+    id: '0987654321'
     expiration_time: 300
+    last_response:
+      date: '20231107'
+      status: 200
+      message: 'Success: Demo response message.'

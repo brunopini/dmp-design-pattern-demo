@@ -15,7 +15,7 @@ class Audience:
         self.name = list(state.keys())[0]
         _state = state.get(self.name)
         self.description = _state.get('description')
-        self.source: dict = ApiGateway(_state.get('apigateway'))
+        self.source: dict = ApiGateway(_state.get('source'))
 
         if data is None:
             self.data: bytes = self.source.get_audience_data()
@@ -41,7 +41,7 @@ class Audience:
         self._state = {
             self.name: {
                 'description': self.description,
-                'apigateway': self.source.state,
+                'source': self.source.state,
                 'adtechA': self.adtech_a.state,
                 'adtechB': self.adtech_b.state
             }
